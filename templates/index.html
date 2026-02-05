@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biotechnology Assistant</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <div>
+          <h1>Biotechnology Assistant</h1>
+          <p>
+            Your postdoc-level biotech partner for experimental design, analysis,
+            and fast sequence tasks.
+          </p>
+        </div>
+        <div class="status">
+          <span>Backend: Python + R</span>
+        </div>
+      </header>
+
+      <section class="panel">
+        <h2>Ask a question</h2>
+        <p class="hint">
+          If you see a connection error, make sure the server is running with
+          <code>python app.py</code>.
+        </p>
+        <textarea
+          id="question"
+          placeholder="Ask about protocols, analysis, or give a sequence task (GC content, reverse complement, translate)."
+        ></textarea>
+        <button id="ask">Get Answer</button>
+      </section>
+
+      <section class="panel">
+        <h2>Run a sequence task</h2>
+        <div class="task-grid">
+          <select id="task">
+            <option value="gc_content">GC Content</option>
+            <option value="reverse_complement">Reverse Complement</option>
+            <option value="translate">Translate (DNA → Protein)</option>
+          </select>
+          <input
+            id="sequence"
+            placeholder="Paste DNA/RNA sequence"
+            type="text"
+          />
+          <button id="run-task">Run Task</button>
+        </div>
+      </section>
+
+      <section class="panel output">
+        <h2>Response</h2>
+        <div id="response" class="response"></div>
+      </section>
+
+      <section class="panel tips">
+        <h2>What I can do</h2>
+        <ul>
+          <li>Design experiments, controls, and troubleshooting steps.</li>
+          <li>Explain tools from wet lab, computational, and education settings.</li>
+          <li>Perform quick sequence calculations directly on your input.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
